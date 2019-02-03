@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 def report_writer(title, content):
     # Prepares text to be written to report, putting each row of content in a
     # separated line

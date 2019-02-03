@@ -4,11 +4,19 @@ This is a class assignment for the Udacity Fullstack Web Developer nanodegree.
 
 ## Usage ##
 
-To run the script, you need to have vagrant up and running with the setting files supplied on the class.
+To run the script, you first need to have _python 3_ installed. You can [get python here](https://www.python.org/downloads/). Choose the correct version for your system and follow the installer instructions.
+
+You will also need to get _virtual box_ using [this link](https://www.virtualbox.org/wiki/Downloads) and _vagrant_ using [this one](https://www.vagrantup.com/downloads.html). Be sure to pick the correct version for your system and follow the installation instructions.
+
+Once you have both installed, download the virtual machine configuration files (which contains the database that will be used by the script) using [this link](https://d17h27t6h515a5.cloudfront.net/topher/2017/June/5948287e_fsnd-virtual-machine/fsnd-virtual-machine.zip) or by cloning [this repository](https://github.com/udacity/fullstack-nanodegree-vm).
+
+Unzip the configuration files on a convenient directory and move to them using a shell, then move to the directory vagrant and execute the command `vagrant up`. After it is done, execute `vagrant ssh`.
+
+If everything goes right, you will have to move to the _/vagrant_ directory inside your virtual machine. This directory is shared with your computer. The script of this repository must be downloaded and stored on the /vagrant directory.
 
 You will also need to set the views listed on the next topic.
 
-Download the script to a convenient location. Once you moved to the script folder, run the command:
+Once everything is done, move to the directory you store this script (remember it must be inside the /vagrant directory) and run the command:
 
 `python3 report.py`
 

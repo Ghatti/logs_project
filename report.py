@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import psycopg2
 from writer import report_writer
 
@@ -7,13 +9,19 @@ report = open('report.txt', 'w+')
 report.write('Python Database Report \r\n\r\n')
 
 # Set the database connection
-db = psycopg2.connect(database='news')
+try:
+    db = psycopg2.connect(database='news')
+except psycopg2.Error as e:
+    print ("Unable to connect to the database")
+
 c = db.cursor()
 
 # Collection of queries to be executed
 queries = [
-    "select title, count(log) from articles, log where log.path like '/article/' || articles.slug group by title order by count desc limit 3;",
-    "select authors.name, count from authors, author_view where authors.id = author_view.author;",
+    """select title, count(log) from articles, log where log.path like '/article/'
+    || articles.slug group by title order by count desc limit 3;""",
+    """select authors.name, count from authors, author_view
+    where authors.id = author_view.author;""",
     "select * from log_pct where pct > 1;"
 ]
 
