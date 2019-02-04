@@ -18,8 +18,9 @@ c = db.cursor()
 
 # Collection of queries to be executed
 queries = [
-    """select title, count(log) from articles, log where log.path like '/article/'
-    || articles.slug group by title order by count desc limit 3;""",
+    """select title, count(log) from articles,
+    log where log.path like '/article/' ||
+    articles.slug group by title order by count desc limit 3;""",
     """select authors.name, count from authors, author_view
     where authors.id = author_view.author;""",
     "select * from log_pct where pct > 1;"
